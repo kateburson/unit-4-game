@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Chonburi|Thasadith" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Crystal Collector</title>
 </head>
 <body background="assets/images/space.png">
 <div id="container">
-    <header>
-        <h1>Crystal Collector</h1>
-    </header>
+    
+    <h1>Crystal Collector</h1>
 
-    <div id="instructions">
-        <h2>How to Play</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>How to Play</h2>
+        </div>
         <br>
         <ul>
             <li>The four crystals below have hidden number values.</li>
@@ -26,23 +28,26 @@
         </ul>
     </div>
     <br>
-    <ul id="score">
-        <li id="wins" class="score">Wins: </li>
-        <li id="losses" class="score">Losses: </li>
-    </ul>
-    <br>
-    
-    <div id="number"> 
-        <p>Random Number: <h2 id="random-number"></h2></p>
-        <br>
-        <p>Your Number: <h2 id="your-number"></h2></p>
+    <div class="row">
+        <div class="col-md-4">
+            <p id="wins">Wins: </p>
+            <p id="losses">Losses: </p>
+        </div>
+        <div class="col-md-4">
+            <p>Random Number: <h2 id="random-number"></h2></p>
+        </div>
+        <div class="col-md-4">
+            <p>Your Number: <h2 id="your-number"></h2></p>
+        </div>
     </div>
-
-    <div id="crystals">
-        <img src="assets/images/Crystal-1.png" height="200px" alt="blue" class="crystal" id="one">
-        <img src="assets/images/Crystal-2.png" height="200px" alt="pink" class="crystal" id="two">
-        <img src="assets/images/Crystal-3.png" height="200px" alt="green" class="crystal" id="three">
-        <img src="assets/images/Crystal-4.png" height="200px" alt="purple" class="crystal" id="four">
+    <br>
+    <div class="row">
+        <div class="col-md-8 crystals">
+            <img src="assets/images/Crystal-1.png" height="200px" alt="blue" class="crystal" id="one">
+            <img src="assets/images/Crystal-2.png" height="200px" alt="pink" class="crystal" id="two">
+            <img src="assets/images/Crystal-3.png" height="200px" alt="green" class="crystal" id="three">
+            <img src="assets/images/Crystal-4.png" height="200px" alt="purple" class="crystal" id="four">
+        </div>
     </div>
 
 </div>

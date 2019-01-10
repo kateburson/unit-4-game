@@ -8,7 +8,7 @@ body {
 }
 
 #container {
-    width: 50%;
+    width: 60%;
     margin: auto;
 }
 
@@ -18,15 +18,16 @@ h1 {
     font-weight: normal;
     color: white;
     text-align: center;
-    padding: 50px;
+    padding: 25px;
 }
 
-#instructions {
+.row {
     background-color: rgba(0, 0, 0, .5);
     padding: 25px;
     color: white;
     width: 100%;
     margin: auto;
+    height: auto;
 }
 
 h2 {
@@ -50,35 +51,6 @@ p {
     font-size: 14pt;
 }
 
-#score {
-    position: relative;
-    background-color: rgba(0, 0, 0, .5);
-    padding: 25px 25px 50px 25px;
-    color: white;
-    width: 100%;
+.crystals {
     margin: auto;
-    list-style: none;
-}
-
-.score {
-    float: left;
-    margin-right: 100px;
-}
-
-#number {
-    background-color: rgba(0, 0, 0, .5);
-    padding: 25px;
-    color: white;
-    width: 21%;
-    height: 200px;
-    float: left;
-}
-
-#crystals {
-    background-color: rgba(0, 0, 0, .5);
-    padding: 25px;
-    color: white;
-    width: 70%;
-    float: right;
-    margin-right: -50px;
 }
