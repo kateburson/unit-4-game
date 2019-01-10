@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-size: 100%;
+}
+
+#container {
+    width: 50%;
+    margin: auto;
+}
+
+h1 {
+    font-family: 'Chonburi', cursive;
+    font-size: 48pt;
+    font-weight: normal;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+#instructions {
+    background-color: rgba(0, 0, 0, .5);
+    padding: 25px;
+    color: white;
+    width: 100%;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Chonburi', cursive;
+    font-weight: normal;
+}
+
+ul {
+    text-align: left;
+    font-family: 'Thasadith', sans-serif;
+    font-weight: bold;
+    font-size: 14pt;
+    margin-left: 25px;
+}
+
+p {
+    text-align: left;
+    font-family: 'Thasadith', sans-serif;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+#score {
+    position: relative;
+    background-color: rgba(0, 0, 0, .5);
+    padding: 25px 25px 50px 25px;
+    color: white;
+    width: 100%;
+    margin: auto;
+    list-style: none;
+}
+
+.score {
+    float: left;
+    margin-right: 100px;
+}
+
+#number {
+    background-color: rgba(0, 0, 0, .5);
+    padding: 25px;
+    color: white;
+    width: 21%;
+    height: 200px;
+    float: left;
+}
+
+#crystals {
+    background-color: rgba(0, 0, 0, .5);
+    padding: 25px;
+    color: white;
+    width: 70%;
+    float: right;
+    margin-right: -50px;
+}
