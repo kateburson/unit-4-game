@@ -53,53 +53,33 @@ var myObj = {
     //     console.log(this.cFour);
     // },
     
-    numberBuilder: function() {
-        var result = Number(this.yourNum) + Number(this.crystals);
+    numberBuilder: function(i) {
+        var result = Number(this.yourNum) + Number(this.crystals[i]);
         this.yourNum = result;
         console.log(this.yourNum);
         $('#your-number').html(this.yourNum);
         if(Number(this.yourNum) === Number(this.randomNum)) {
             alert('You win!');
             this.wins++;
+            $('#wins').text('Wins: ' + this.wins);
             myObj.reset();
         }
-        else if(Number(this.yourNum) > Number(this.randomNum)) {
-            // alert('Game over.');
+        else if(this.yourNum > this.randomNum) {
+            console.log('Game over.');
             console.log(this.yourNum, this.randomNum);
             this.losses++;
+            $('#losses').html('<p>Losses: </p>' + this.losses);
             myObj.reset();
-
         }
     },
 
-    // numberBuilderTwo: function() {
-    //     var result = Number(this.yourNum) + Number(this.cTwo);
-    //     this.yourNum = result;
-    //     console.log(this.yourNum);
-    //     $('#your-number').html(this.yourNum);
-    // },
-
-    // numberBuilderThree: function() {
-    //     var result = Number(this.yourNum) + Number(this.cThree);
-    //     this.yourNum = result;
-    //     console.log(this.yourNum);
-    //     $('#your-number').html(this.yourNum);
-    // },
-
-    // numberBuilderFour: function() {
-    //     var result = Number(this.yourNum) + Number(this.cFour);
-    //     this.yourNum = result;
-    //     console.log(this.yourNum);
-    //     $('#your-number').html(this.yourNum);
-    //     }
-    // },
-
     reset: function() {
         yourNum = '';
-        cOne = '';
-        cTwo = '';
-        cThree = '';
-        cFour = '';
+        $('#your-number').html(yourNum);
+        crystals = [];
+        this.genRandom();
+        randomNum = '';
+        $('#random-number')
     },
 
 };
@@ -111,26 +91,22 @@ $('#random-number').ready(function() {
 
 $(document).ready(function(){
     myObj.assignValue();
-    // myObj.assignCOne();
-    // myObj.assignCTwo();
-    // myObj.assignCThree();
-    // myObj.assignCFour();
 });
 
 $('#one').on('click', function() {
-    myObj.numberBuilderOne();
+    myObj.numberBuilder(0);
 });
 
 $('#two').on('click', function() {
-    myObj.numberBuilderTwo();
+    myObj.numberBuilder(1);
 });
 
 $('#three').on('click', function() {
-    myObj.numberBuilderThree();
+    myObj.numberBuilder(2);
 });
 
 $('#four').on('click', function() {
-    myObj.numberBuilderFour();
+    myObj.numberBuilder(3);
 });
 
 
