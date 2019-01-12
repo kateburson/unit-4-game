@@ -8,10 +8,6 @@ var myObj = {
     losses: 0,
     randomNum: '',
     yourNum: '',
-    // cOne: '',
-    // cTwo: '',
-    // cThree: '',
-    // cFour: '',
     crystals: [],
     
     genRandom: function() {
@@ -29,30 +25,6 @@ var myObj = {
         console.log(this.crystals);
     },
 
-    // assignCOne: function() {
-    //     var value = Math.floor(Math.random() * 12) + 1;
-    //     this.cOne = value;
-    //     console.log(this.cOne);
-    // },
-
-    // assignCTwo: function() {
-    //     var value = Math.floor(Math.random() * 12) + 1;
-    //     this.cTwo = value;
-    //     console.log(this.cTwo);
-    // },
-
-    // assignCThree: function() {
-    //     var value = Math.floor(Math.random() * 12) + 1;
-    //     this.cThree = value;
-    //     console.log(this.cThree);
-    // },
-
-    // assignCFour: function() {
-    //     var value = Math.floor(Math.random() * 12) + 1;
-    //     this.cFour = value;
-    //     console.log(this.cFour);
-    // },
-    
     numberBuilder: function(i) {
         var result = Number(this.yourNum) + Number(this.crystals[i]);
         this.yourNum = result;
@@ -61,25 +33,26 @@ var myObj = {
         if(Number(this.yourNum) === Number(this.randomNum)) {
             alert('You win!');
             this.wins++;
-            $('#wins').text('Wins: ' + this.wins);
+            $('#wins').html('Wins: ' + this.wins);
             myObj.reset();
         }
         else if(this.yourNum > this.randomNum) {
             console.log('Game over.');
             console.log(this.yourNum, this.randomNum);
             this.losses++;
-            $('#losses').html('<p>Losses: </p>' + this.losses);
+            $('#losses').html('Losses: ' + this.losses);
             myObj.reset();
         }
     },
 
     reset: function() {
-        yourNum = '';
-        $('#your-number').html(yourNum);
-        crystals = [];
         this.genRandom();
-        randomNum = '';
-        $('#random-number')
+        
+        this.yourNum = '';
+        $('#your-number').html(this.yourNum);
+        
+        this.crystals = [];
+        this.assignValue();
     },
 
 };
@@ -108,10 +81,6 @@ $('#three').on('click', function() {
 $('#four').on('click', function() {
     myObj.numberBuilder(3);
 });
-
-
-
-
 
 
 });
