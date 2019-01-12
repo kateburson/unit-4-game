@@ -34,6 +34,7 @@ h2 {
     text-align: center;
     font-family: 'Chonburi', cursive;
     font-weight: normal;
+    float: left;
 }
 
 ul {
@@ -53,4 +54,8 @@ p {
 
 .crystals {
     margin: auto;
+}
+
+.crystal:hover{
+    opacity: .8;
 }

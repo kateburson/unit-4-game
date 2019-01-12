@@ -8,48 +8,75 @@ var myObj = {
     losses: 0,
     randomNum: '',
     yourNum: '',
-    cOne: [],
-    cTwo: [],
-    cThree: [],
-    cFour: [],
-    crystals: [cOne, cTwo, cThree, cFour],
-
+    cOne: '',
+    cTwo: '',
+    cThree: '',
+    cFour: '',
+    
     genRandom: function() {
         var result = Math.floor(Math.random() * 120) + 19;
         console.log(result);
         $('#random-number').html(result);
     },
 
-    // assignValue: function() {
-    //     for(var i=0; i<this.crystals.length; i++) {
-    //         var value = Math.floor(Math.random() * 12) + 1;
-    //         this.crystals.indexOf(i).push(value);
-    //     }
-    //     console.log(crystals[i]);
-    // }
-
     assignCOne: function() {
         var value = Math.floor(Math.random() * 12) + 1;
-        this.cOne.push(value);
-        console.log(value);
+        this.cOne = value;
+        console.log(this.cOne);
     },
 
     assignCTwo: function() {
         var value = Math.floor(Math.random() * 12) + 1;
-        this.cTwo.push(value);
-        console.log(value);
+        this.cTwo = value;
+        console.log(this.cTwo);
     },
 
     assignCThree: function() {
         var value = Math.floor(Math.random() * 12) + 1;
-        this.cThree.push(value);
-        console.log(value);
+        this.cThree = value;
+        console.log(this.cThree);
     },
 
     assignCFour: function() {
         var value = Math.floor(Math.random() * 12) + 1;
-        this.cFour.push(value);
-        console.log(value);
+        this.cFour = value;
+        console.log(this.cFour);
+    },
+
+    numberBuilderOne: function() {
+        var result = Number(this.yourNum) + Number(this.cOne);
+        this.yourNum = result;
+        console.log(this.yourNum);
+        $('#your-number').html(this.yourNum);
+    },
+
+    numberBuilderTwo: function() {
+        var result = Number(this.yourNum) + Number(this.cTwo);
+        this.yourNum = result;
+        console.log(this.yourNum);
+        $('#your-number').html(this.yourNum);
+    },
+
+    numberBuilderThree: function() {
+        var result = Number(this.yourNum) + Number(this.cThree);
+        this.yourNum = result;
+        console.log(this.yourNum);
+        $('#your-number').html(this.yourNum);
+    },
+
+    numberBuilderFour: function() {
+        var result = Number(this.yourNum) + Number(this.cFour);
+        this.yourNum = result;
+        console.log(this.yourNum);
+        $('#your-number').html(this.yourNum);
+    },
+
+    reset: function() {
+        yourNum = '';
+        cOne = '';
+        cTwo = '';
+        cThree = '';
+        cFour = '';
     },
 
 };
@@ -66,12 +93,23 @@ $(document).ready(function(){
     myObj.assignCFour();
 });
 
-$('.crystals').on('click', function() {
-    $('#your-number').html($('.crystals').val());
+$('#one').on('click', function() {
+    myObj.numberBuilderOne();
+});
+
+$('#two').on('click', function() {
+    myObj.numberBuilderTwo();
+});
+
+$('#three').on('click', function() {
+    myObj.numberBuilderThree();
+});
+
+$('#four').on('click', function() {
+    myObj.numberBuilderFour();
 });
 
 
 
-  
 
 });
