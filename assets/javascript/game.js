@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
 // Creating Object
 var myObj = {
     
@@ -37,7 +36,7 @@ var myObj = {
             myObj.reset();
         }
         else if(this.yourNum > this.randomNum) {
-            console.log('Game over.');
+            alert('Game over.');
             console.log(this.yourNum, this.randomNum);
             this.losses++;
             $('#losses').html('Losses: ' + this.losses);
@@ -55,6 +54,13 @@ var myObj = {
         this.assignValue();
     },
 
+    randomColor: function() {
+        var colorR = Math.floor((Math.random() * 256));
+        var colorG = Math.floor((Math.random() * 256));
+        var colorB = Math.floor((Math.random() * 256));
+        $('#your-number').css("color", "rgb(" + colorR + "," + colorG + "," + colorB + ")");
+    },
+
 };
 
 // Calling Functions
@@ -68,18 +74,22 @@ $(document).ready(function(){
 
 $('#one').on('click', function() {
     myObj.numberBuilder(0);
+    myObj.randomColor();
 });
 
 $('#two').on('click', function() {
     myObj.numberBuilder(1);
+    myObj.randomColor();
 });
 
 $('#three').on('click', function() {
     myObj.numberBuilder(2);
+    myObj.randomColor();
 });
 
 $('#four').on('click', function() {
     myObj.numberBuilder(3);
+    myObj.randomColor();
 });
 
 
